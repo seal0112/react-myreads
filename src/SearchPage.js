@@ -21,17 +21,17 @@ class SearchPage extends Component{
         if(!value){
             this.setState(()=>({searchBooks: []}));
         }
-    }
+    };
 
     searchBooks = event => {
         event.preventDefault();
         const query = this.state.searchValue;
         BooksAPI.search(query)
-          .then(res=>{
-              let books = res.error?[]:res;
+          .then(res => {
+              let books = res.error ? [] : res;
               this.setState(()=>({searchBooks: books}));
           })
-    }
+    };
 
     render(){
         const { searchBooks } = this.state;

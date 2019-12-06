@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
+/**
+* @description Represents a book
+* @constructor
+* @param {string} title - The title of the book
+* @param {string} author - The author of the book
+*/
 class Book extends Component{
     static propTypes = {
         book: PropTypes.object.isRequired,
@@ -8,7 +15,7 @@ class Book extends Component{
         handleBookShelfChange: PropTypes.func.isRequired,
     }
 
-    state = {      
+    state = {
         bookShelfOptions: [
             {
                 value: 'currentlyReading',
@@ -32,7 +39,7 @@ class Book extends Component{
                 <div className="book-top">
                     <div
                       className="book-cover"
-                      style={{ 
+                      style={{
                         width: 128,
                         height: 193,
                         backgroundImage: `url(${book.imageLinks && book.imageLinks.thumbnail})` }}></div>

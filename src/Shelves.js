@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import Book from './Book';
+import PropTypes from 'prop-types';
 
 class Shelves extends Component{
+    static propTypes = {
+        shelf: PropTypes.object,
+        handleBookShelfChange: PropTypes.func,
+    }
+
     render(){
         const { shelf, handleBookShelfChange } = this.props;
-        
+
         return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{shelf.title}</h2>
