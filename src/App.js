@@ -36,7 +36,9 @@ class BooksApp extends React.Component {
     };
 
     /**
-    * @param {string} id is a argument for.
+    * @description handle book's shelf change
+    * @param {string} id is a string from the server,
+    *                 which is used to notify server which book had changed status.
     * @param {object} events are "things" that happen to HTML elements.
     */
     handleBookShelfChange = (id, event) => {
@@ -49,6 +51,11 @@ class BooksApp extends React.Component {
             })
     };
 
+    /**
+    * @description use book's title to find book's shelf
+    * @param {string} title is a string about book's main title.
+    * @return {?string} return book's shelf
+    */
     isBookInShelf = (title) => {
         for(let book of this.state.books){
             if(book.title === title){

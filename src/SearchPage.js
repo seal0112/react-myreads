@@ -15,6 +15,11 @@ class SearchPage extends Component{
         searchValue: ''
     }
 
+
+    /**
+    * @description handle search input change
+    * @param {object} events are "things" that happen to HTML elements.
+    */
     handleSearchInput = event => {
         const value = event.target.value;
         this.setState(()=>({searchValue: value}));
